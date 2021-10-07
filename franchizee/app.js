@@ -1,8 +1,10 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const playersroutes = require('./routes/players');
+const authroutes = require('./routes/auth');
 const app = express();
 const mongoose = require('mongoose');
+console.log("Inside server")
 
 app.use(bodyParser.json());
 
@@ -14,6 +16,7 @@ app.use((req, res, next) => {
 });
 
 app.use(playersroutes);
+app.use(authroutes);
 
 mongoose
   .connect('mongodb+srv://darshan:msdhoni@cluster0.oantu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority')

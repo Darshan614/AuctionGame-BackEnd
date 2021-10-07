@@ -1,5 +1,11 @@
 const Player = require('../models/player');
 
+exports.getcheck = (req,res,next)=>{
+    res.status(200).json({
+        "name":"Yahoo"
+    })
+}
+
 exports.getBatsman = (req,res,next) => {
     
     Player.find()
@@ -27,6 +33,7 @@ exports.postInviteFriends = (req,res,next) => {
 }
 
 exports.postInvitation = (req,res,next) => {
+    
     res.status(201).json({
         requestAccepted:true
     })

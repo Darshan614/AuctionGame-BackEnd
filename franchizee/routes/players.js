@@ -3,6 +3,7 @@ const playerController = require('../controllers/players');
 
 const router = express.Router();
 
+router.get('/check',playerController.getcheck)
 router.get('/batsman', playerController.getBatsman);
 router.post('/friends',playerController.postInviteFriends);
 router.post('/invitation',playerController.postInvitation);
