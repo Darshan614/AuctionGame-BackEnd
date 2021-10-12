@@ -4,9 +4,23 @@ const playersroutes = require('./routes/players');
 const authroutes = require('./routes/auth');
 const app = express();
 const mongoose = require('mongoose');
-console.log("Inside server")
+const cors = require("cors");
+console.log("Inside server");
+app.use((req,res,next)=>{
+  res.header(
+    "Access-Control-Allow-Headers",
+    "x-access-token, Origin, Content-Type, Accept"
+  );
+  next();
+});
 
 app.use(bodyParser.json());
+
+var corsOptions = {
+  origin:"https://localhost:8080"
+};
+
+// app.use(cors(corsOptions));
 
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
