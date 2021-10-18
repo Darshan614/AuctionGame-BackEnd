@@ -5,8 +5,8 @@ const router = express.Router();
 
 router.get('/check',playerController.getcheck)
 router.get('/batsman', playerController.getBatsman);
-router.post('/friends',playerController.postInviteFriends);
-router.post('/invitation',playerController.postInvitation);
+// router.post('/friends',playerController.postInviteFriends);
+//router.post('/invitation',playerController.postInvitation);
 
 module.exports = router;
 

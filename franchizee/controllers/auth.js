@@ -33,14 +33,16 @@ exports.postsignup = (req,res,next) => {
 }
 
 exports.login = (req,res,next) => {
+	console.log('body',req.body);
 	User.findOne({
-		username: req.body.username
+		userName: req.body.uname
 	})
 	.exec((err,user)=>{
 		if(err){
 			res.status(500).send({message:err});
 			return;
 		}
+		console.log('user in login ',user);
 		if(!user){
 			console.log("not found");
 			return res.status(200).send({message:"User not found"});
@@ -62,10 +64,10 @@ exports.login = (req,res,next) => {
 		var token = jwt.sign({id:user.id},config.secret,{
 			expiresIn:86400
 		});
-		console.log("user craeted");
+		console.log("user entered",user._id,req.body.uname,token,user.userName);
 		res.status(200).send({
 			id:user._id,
-			username:user.username,
+			username:user.userName,
 			accessToken:token
 		});
 	});

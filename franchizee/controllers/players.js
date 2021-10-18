@@ -24,13 +24,13 @@ exports.getBatsman = (req,res,next) => {
     })
 }
 
-exports.postInviteFriends = (req,res,next) => {
-    const name = req.body.name;
-    res.status(201).json({
-        friendFound:true,
-        Friend:{name:name}
-    })
-}
+// exports.postInviteFriends = (req,res,next) => {
+//     const name = req.body.name;
+//     res.status(201).json({
+//         friendFound:true,
+//         Friend:{name:name}
+//     })
+// }
 
 exports.postInvitation = (req,res,next) => {
     

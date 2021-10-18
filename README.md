@@ -1,4 +1,8 @@
 # AuctionGame-BackEnd
 This is the Backend part of a MERN project based on Auction Game. 
 
-The initial commits hold the basic setup including authentication and few routes.
+Websocket is used to give the user a real time playing experience for which socket.io package is used. 
+
+Authentication is token-based using JWT and bcrypt.js
+
+
