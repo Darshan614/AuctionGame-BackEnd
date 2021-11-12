@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const playersroutes = require('./routes/players');
 const gamehandlerroutes = require('./routes/gamehandler');
+const flowroutes = require('./routes/flow');
 const authroutes = require('./routes/auth');
 const app = express();
 const mongoose = require('mongoose');
@@ -58,6 +59,7 @@ console.log("right before ghr");
 app.use(gamehandlerroutes);
 app.use(playersroutes);
 app.use(authroutes);
+app.use(flowroutes);
 console.log("right after ghr");
 
 mongoose

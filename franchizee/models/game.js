@@ -7,7 +7,16 @@ const gameSchema = new Schema({
 		required:true
 	},
 	players:[{
-		name:{type:String}
+		name:{type:String},
+		totalpoints:{type:Number},
+		moneyleft:{type:Number}
+	}],
+	cricketers:[{
+		name:{type:String},
+		basePrice:{type:Number},
+		country:{type:String},
+		points:{type:Number},
+		category:{type:String}
 	}]
 })
 
